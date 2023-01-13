@@ -8,6 +8,7 @@ EMAIL = os.getenv("MY_EMAIL")
 PASSWORD = os.getenv("MY_PASSWORD")
 
 with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+    # Transport Layer Security (TLS) secures our sensitive information and data from hackers.
     connection.starttls()
     connection.login(user=EMAIL, password=PASSWORD)
     connection.sendmail(from_addr=EMAIL, to_addrs=EMAIL,
